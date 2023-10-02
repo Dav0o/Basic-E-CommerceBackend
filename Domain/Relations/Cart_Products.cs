@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace Domain.Relations
 {
-    public class Product_Categories
+    public class Cart_Products
     {
         public int ProductId { get; set; }
 
         public Product Product { get; set; }
 
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public int ShoppingCartId { get; set; }
+
+        public ShoppingCart ShoppingCart { get; set; }
+
+      
     }
 }

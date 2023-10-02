@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Repository
 {
-    public class Category : BaseEntity
+    public class GenericRepository
     {
-        public string Name { get; set; }
     }
 }
