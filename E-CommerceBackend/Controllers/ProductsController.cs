@@ -1,4 +1,5 @@
 ﻿using Application.Commands;
+using Application.Queries;
 using Domain;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +22,13 @@ namespace E_CommerceBackend.Controllers
         public async Task<Product> PostAsync(AddProduct productRequest)
         {
             return await _mediator.Send(productRequest);
+        }
+
+        [HttpGet]
+        public async Task<List<Product>> GeAsync()
+        {
+            return await _mediator.Send(new GetProducts());
+
         }
     }
 }

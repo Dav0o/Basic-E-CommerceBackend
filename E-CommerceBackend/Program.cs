@@ -1,6 +1,14 @@
 using Application;
+using Domain;
+
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Add External Dependencies
+builder.Services.AddDomain(builder.Configuration);
+builder.Services.AddServices(builder.Configuration);
+
 
 // Add services to the container.
 

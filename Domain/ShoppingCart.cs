@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class ShoppingCart
+    public class ShoppingCart : BaseEntity
     {
 
         public int TotalAmount { get; set; }
@@ -15,7 +15,7 @@ namespace Domain
 
         public int Total { get; set; }
 
-        public List<Cart_Products> Cart_Products { get; set; }
+        public List<Cart_Product> Cart_Products { get; set; }
 
     }
     
