@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Application\\Application.csproj": {}
+    "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Application\\Application.csproj": {
+    "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Application\\obj\\",
+        "projectPath": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Estudiantes UNA.N00165691\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Estudiantes UNA.N00165691\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Domain\\Domain.csproj"
+              "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\Domain.csproj"
               }
             }
           }
@@ -65,21 +65,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Domain\\Domain.csproj": {
+    "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Proyecto de Paradigmas\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Estudiantes UNA.N00165691\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Estudiantes UNA.N00165691\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,6 +108,22 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
             }
           },
           "imports": [
@@ -126,7 +142,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

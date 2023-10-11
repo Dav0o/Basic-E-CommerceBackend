@@ -14,7 +14,7 @@ namespace Domain
 
         public int Price { get; set; }
 
-        public List<Cart_Products> Cart_Products { get; set;}
+        public List<Cart_Product> Cart_Products { get; set;}
      
     }
 }

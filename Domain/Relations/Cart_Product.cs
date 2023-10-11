@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Relations
 {
-    public class Cart_Products
+    public class Cart_Product
     {
         public int ProductId { get; set; }
 
