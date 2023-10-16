@@ -30,8 +30,8 @@ namespace Application.Commands
         public async Task<Producto> Handle(AddProduct request, CancellationToken cancellationToken)
         {
             Producto product = new Producto();
-            product.ProductName = request.Name;
-            product.ProductPrice = request.Price;
+            product.Name = request.Name;
+            product.Price = request.Price;
          
 
             _productRepository.Add(product);

@@ -221,3 +221,4 @@ C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-Com
 C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\E-CommerceBackend\obj\Debug\net7.0\E-CommerceBackend.pdb
 C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\E-CommerceBackend\obj\Debug\net7.0\E-CommerceBackend.genruntimeconfig.cache
 C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\E-CommerceBackend\obj\Debug\net7.0\ref\E-CommerceBackend.dll
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\E-CommerceBackend\obj\Debug\net7.0\E-CommerceBackend.MvcApplicationPartsAssemblyInfo.cs

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Domain.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20231016162808_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20231016224051_initial migration")]
+    partial class initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace Domain.Migrations
                 .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Domain.Details", b =>
+            modelBuilder.Entity("Domain.ProductCart", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace Domain.Migrations
 
                     b.HasIndex("ProductoId");
 
-                    b.ToTable("Details");
+                    b.ToTable("ProductsCart");
                 });
 
             modelBuilder.Entity("Domain.Producto", b =>
@@ -52,22 +52,14 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("ProductName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("ProductPrice")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ShoppingCartId")
+                    b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ShoppingCartId");
 
                     b.ToTable("Productos");
                 });
@@ -87,24 +79,24 @@ namespace Domain.Migrations
                     b.Property<double>("Total")
                         .HasColumnType("double");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("longtext");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("ShoppingCarts");
                 });
 
-            modelBuilder.Entity("Domain.Details", b =>
+            modelBuilder.Entity("Domain.ProductCart", b =>
                 {
                     b.HasOne("Domain.ShoppingCart", "ShoppingCart")
-                        .WithMany("Details")
+                        .WithMany("ProductCarts")
                         .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Producto", "Producto")
-                        .WithMany("Details")
+                        .WithMany("ProductsCart")
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -116,21 +108,12 @@ namespace Domain.Migrations
 
             modelBuilder.Entity("Domain.Producto", b =>
                 {
-                    b.HasOne("Domain.ShoppingCart", null)
-                        .WithMany("Cart_Products")
-                        .HasForeignKey("ShoppingCartId");
-                });
-
-            modelBuilder.Entity("Domain.Producto", b =>
-                {
-                    b.Navigation("Details");
+                    b.Navigation("ProductsCart");
                 });
 
             modelBuilder.Entity("Domain.ShoppingCart", b =>
                 {
-                    b.Navigation("Cart_Products");
-
-                    b.Navigation("Details");
+                    b.Navigation("ProductCarts");
                 });
 #pragma warning restore 612, 618
         }

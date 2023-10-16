@@ -21,27 +21,23 @@ namespace Domain.Data
         public DbSet<Producto> Productos { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         
-
+        public DbSet<ProductCart> ProductsCart { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
 
-            //Cart -> Details
+
+           
 
             modelBuilder.Entity<ShoppingCart>()
-            .HasMany(e => e.Details)
-            .WithOne(e => e.ShoppingCart)
-            .HasForeignKey(e => e.CartId)
-            .IsRequired(true);
+                .HasMany(c => c.ProductCarts)
+                .WithOne(pc => pc.ShoppingCart)
+                .HasForeignKey(pc => pc.CartId);
 
-            //product ->details
-
-            modelBuilder.Entity<Producto>()
-            .HasMany(e => e.Details)
-            .WithOne(e => e.Producto)
-            .HasForeignKey(e => e.ProductoId)
-            .IsRequired(true);
+            modelBuilder.Entity<ProductCart>()
+                .HasOne(pc => pc.Producto)
+                .WithMany(p => p.ProductsCart)
+                .HasForeignKey(pc => pc.ProductoId);
         }
     }
 }

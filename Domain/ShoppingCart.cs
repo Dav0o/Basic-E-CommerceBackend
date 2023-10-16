@@ -7,22 +7,20 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class ShoppingCart : BaseEntity
+    public class ShoppingCart
     {
-
-        public string? UserId { get; set; }
-
-        public List<Producto>? Cart_Products { get; set; }
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        
 
         public double SubTotal { get; set; }
 
         public double Total { get; set; }
 
-        public DateTime ShoppingDate { get; set; } = DateTime.Now;
+        public DateTime ShoppingDate { get; set; }
 
-        //relations
-        [JsonIgnore]
-        public List<Details>? Details { get; set; }
+        
+        public List<ProductCart> ProductCarts { get; set; } = new List<ProductCart>();
 
     }
     

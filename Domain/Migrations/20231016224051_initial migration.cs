@@ -7,7 +7,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace Domain.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class initialmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,12 +16,27 @@ namespace Domain.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Productos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Productos", x => x.Id);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "ShoppingCarts",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<string>(type: "longtext", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     SubTotal = table.Column<double>(type: "double", nullable: false),
                     Total = table.Column<double>(type: "double", nullable: false),
                     ShoppingDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
@@ -33,29 +48,7 @@ namespace Domain.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Productos",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    ProductName = table.Column<string>(type: "longtext", nullable: false),
-                    ProductPrice = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    ShoppingCartId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Productos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Productos_ShoppingCarts_ShoppingCartId",
-                        column: x => x.ShoppingCartId,
-                        principalTable: "ShoppingCarts",
-                        principalColumn: "Id");
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Details",
+                name: "ProductsCart",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -66,15 +59,15 @@ namespace Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Details", x => x.Id);
+                    table.PrimaryKey("PK_ProductsCart", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Details_Productos_ProductoId",
+                        name: "FK_ProductsCart_Productos_ProductoId",
                         column: x => x.ProductoId,
                         principalTable: "Productos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Details_ShoppingCarts_CartId",
+                        name: "FK_ProductsCart_ShoppingCarts_CartId",
                         column: x => x.CartId,
                         principalTable: "ShoppingCarts",
                         principalColumn: "Id",
@@ -83,26 +76,21 @@ namespace Domain.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Details_CartId",
-                table: "Details",
+                name: "IX_ProductsCart_CartId",
+                table: "ProductsCart",
                 column: "CartId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Details_ProductoId",
-                table: "Details",
+                name: "IX_ProductsCart_ProductoId",
+                table: "ProductsCart",
                 column: "ProductoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Productos_ShoppingCartId",
-                table: "Productos",
-                column: "ShoppingCartId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Details");
+                name: "ProductsCart");
 
             migrationBuilder.DropTable(
                 name: "Productos");

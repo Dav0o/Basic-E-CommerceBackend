@@ -11,13 +11,12 @@ namespace Domain
     {
         public int Id { get; set; }
 
-        public string ProductName { get; set; } = string.Empty;
+        public string Name { get; set; }
 
-        public int ProductPrice { get; set; }
-        public int Quantity { get; set; }
+        public int Price { get; set; }
 
 
         [JsonIgnore]
-        public List<Details>? Details { get; set; }
+        public List<ProductCart>? ProductsCart { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Details
+    public class ProductCart
     {
         public int Id { get; set; }
 

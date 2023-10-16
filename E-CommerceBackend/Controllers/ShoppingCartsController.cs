@@ -1,5 +1,6 @@
 ﻿using Application.Commands;
 using Domain;
+using Domain.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace E_CommerceBackend.Controllers
         }
 
         [HttpPost]
-        public async Task<ShoppingCart> PostAsync(PostCart request)
+        public async Task<CartDTO> PostAsync(PostCart request)
         {
             return await _mediator.Send(request);
         }

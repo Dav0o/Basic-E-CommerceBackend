@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Repository
 {
-    public class DetailsRepository : GenericRepository<Details>, IDetailsRepository
+    public class DetailsRepository : GenericRepository<ProductCart>, IDetailsRepository
     {
         private readonly MyDbContext _context;
 
