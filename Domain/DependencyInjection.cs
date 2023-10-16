@@ -37,7 +37,8 @@ namespace Domain
 
           //  services.AddScoped<IGenericRepository<Product>, GenericRepository<Product>>();
             services.AddScoped<IProductRepository, ProductRepository>();
-
+            services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
+            services.AddScoped<IDetailsRepository, DetailsRepository>();
 
 
             return services;

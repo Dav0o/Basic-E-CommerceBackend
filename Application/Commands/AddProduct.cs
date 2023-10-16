@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 
 namespace Application.Commands
 {
-    public class AddProduct : IRequest<Product>
+    public class AddProduct : IRequest<Producto>
     {
         public string Name { get; set; } = string.Empty;
 
         public int Price { get; set; }
+       
     }
 
-    public class AddProductHandler : IRequestHandler<AddProduct, Product> 
+    public class AddProductHandler : IRequestHandler<AddProduct, Producto> 
       
        
     {
@@ -26,11 +27,14 @@ namespace Application.Commands
         {
             _productRepository = productRepository;
         }
-        public async Task<Product> Handle(AddProduct request, CancellationToken cancellationToken)
+        public async Task<Producto> Handle(AddProduct request, CancellationToken cancellationToken)
         {
-            Product product = new Product();
-            product.Name = request.Name;
-            product.Price = request.Price;
+            Producto product = new Producto();
+            product.ProductName = request.Name;
+            product.ProductPrice = request.Price;
+         
+
+            _productRepository.Add(product);
 
             return product;
         }

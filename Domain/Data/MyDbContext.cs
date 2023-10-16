@@ -1,8 +1,9 @@
-﻿using Domain.Relations;
+﻿
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,28 +18,30 @@ namespace Domain.Data
         }
 
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Producto> Productos { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
-        public DbSet<Cart_Product> Cart_Products { get; set; }
-
+        
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Cart_Product
+            
 
-            modelBuilder.Entity<Cart_Product>()
-                .HasKey(cp => new { cp.ProductId, cp.ShoppingCartId });
+            //Cart -> Details
 
-            modelBuilder.Entity<Cart_Product>()
-                .HasOne(cp => cp.Product)
-                .WithMany(p => p.Cart_Products)
-                .HasForeignKey(cp => cp.ProductId);
+            modelBuilder.Entity<ShoppingCart>()
+            .HasMany(e => e.Details)
+            .WithOne(e => e.ShoppingCart)
+            .HasForeignKey(e => e.CartId)
+            .IsRequired(true);
 
-            modelBuilder.Entity<Cart_Product>()
-                .HasOne(cp => cp.ShoppingCart)
-                .WithMany(sc => sc.Cart_Products)
-                .HasForeignKey(cp => cp.ShoppingCartId);
+            //product ->details
+
+            modelBuilder.Entity<Producto>()
+            .HasMany(e => e.Details)
+            .WithOne(e => e.Producto)
+            .HasForeignKey(e => e.ProductoId)
+            .IsRequired(true);
         }
     }
 }

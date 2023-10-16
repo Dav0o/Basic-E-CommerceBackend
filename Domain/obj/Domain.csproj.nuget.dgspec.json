@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\Domain.csproj": {}
+    "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\Domain.csproj": {
+    "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Estudiantes UNA.N00165691\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estudiantes UNA.N00165691\\Desktop\\aaa\\Basic-E-CommerceBackend\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Estudiantes UNA.N00165691\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

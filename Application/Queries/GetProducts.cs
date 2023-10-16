@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace Application.Queries
 {
-    public class GetProducts : IRequest<List<Product>>
+    public class GetProducts : IRequest<List<Producto>>
 
     { 
     }
 
 
-    public class GetProductsHandler : IRequestHandler<GetProducts, List<Product>>
+    public class GetProductsHandler : IRequestHandler<GetProducts, List<Producto>>
     {
         private readonly IProductRepository _productRepository;
 
@@ -25,9 +25,9 @@ namespace Application.Queries
             _productRepository = productRepository;
         }
 
-        public async Task<List<Product>> Handle(GetProducts request, CancellationToken cancellationToken)
+        public async Task<List<Producto>> Handle(GetProducts request, CancellationToken cancellationToken)
         {
-            List<Product> products = await Task.Run(() =>
+            List<Producto> products = await Task.Run(() =>
             {
                 return _productRepository.GetAll();
             });

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Repository.IRepository
 {
-    public interface IProductRepository : IGenericRepository<Product>
+    public interface IProductRepository : IGenericRepository<Producto>
     {
      //   public Task<List<Product>> GetProductList();
     }

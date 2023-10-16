@@ -19,40 +19,54 @@ namespace Domain.Migrations
                 .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Domain.Product", b =>
+            modelBuilder.Entity("Domain.Details", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("ProductoId")
+                        .HasColumnType("int");
 
-                    b.Property<int>("Price")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("ProductoId");
+
+                    b.ToTable("Details");
                 });
 
-            modelBuilder.Entity("Domain.Relations.Cart_Product", b =>
+            modelBuilder.Entity("Domain.Producto", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("ShoppingCartId")
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("ProductPrice")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductId", "ShoppingCartId");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ShoppingCartId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("ShoppingCartId");
 
-                    b.ToTable("Cart_Products");
+                    b.ToTable("Productos");
                 });
 
             modelBuilder.Entity("Domain.ShoppingCart", b =>
@@ -61,50 +75,59 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime>("ShoppingDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("SubTotal")
-                        .HasColumnType("int");
+                    b.Property<double>("SubTotal")
+                        .HasColumnType("double");
 
-                    b.Property<int>("Total")
-                        .HasColumnType("int");
+                    b.Property<double>("Total")
+                        .HasColumnType("double");
 
-                    b.Property<int>("TotalAmount")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
                     b.ToTable("ShoppingCarts");
                 });
 
-            modelBuilder.Entity("Domain.Relations.Cart_Product", b =>
+            modelBuilder.Entity("Domain.Details", b =>
                 {
-                    b.HasOne("Domain.Product", "Product")
-                        .WithMany("Cart_Products")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.ShoppingCart", "ShoppingCart")
-                        .WithMany("Cart_Products")
-                        .HasForeignKey("ShoppingCartId")
+                        .WithMany("Details")
+                        .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
+                    b.HasOne("Domain.Producto", "Producto")
+                        .WithMany("Details")
+                        .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Producto");
 
                     b.Navigation("ShoppingCart");
                 });
 
-            modelBuilder.Entity("Domain.Product", b =>
+            modelBuilder.Entity("Domain.Producto", b =>
                 {
-                    b.Navigation("Cart_Products");
+                    b.HasOne("Domain.ShoppingCart", null)
+                        .WithMany("Cart_Products")
+                        .HasForeignKey("ShoppingCartId");
+                });
+
+            modelBuilder.Entity("Domain.Producto", b =>
+                {
+                    b.Navigation("Details");
                 });
 
             modelBuilder.Entity("Domain.ShoppingCart", b =>
                 {
                     b.Navigation("Cart_Products");
+
+                    b.Navigation("Details");
                 });
 #pragma warning restore 612, 618
         }

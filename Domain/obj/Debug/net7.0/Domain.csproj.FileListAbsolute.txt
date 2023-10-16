@@ -36,3 +36,17 @@ C:\Users\Estudiantes UNA.N00165691\Desktop\aaa\Basic-E-CommerceBackend\Domain\ob
 C:\Users\Estudiantes UNA.N00165691\Desktop\aaa\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\Estudiantes UNA.N00165691\Desktop\aaa\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.genruntimeconfig.cache
 C:\Users\Estudiantes UNA.N00165691\Desktop\aaa\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\bin\Debug\net7.0\Domain.runtimeconfig.json
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\Domain.genruntimeconfig.cache
+C:\Users\Usuario\Documents\UNA\VI Semestre\Paradigmas de programcion\Basic-E-CommerceBackend\Domain\obj\Debug\net7.0\ref\Domain.dll

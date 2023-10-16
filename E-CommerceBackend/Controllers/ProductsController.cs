@@ -19,15 +19,22 @@ namespace E_CommerceBackend.Controllers
         }
 
         [HttpPost]
-        public async Task<Product> PostAsync(AddProduct productRequest)
+        public async Task<Producto> PostAsync(AddProduct productRequest)
         {
             return await _mediator.Send(productRequest);
         }
 
         [HttpGet]
-        public async Task<List<Product>> GeAsync()
+        public async Task<List<Producto>> GeAsync()
         {
             return await _mediator.Send(new GetProducts());
+
+        }
+
+        [HttpGet("{id}")]
+        public async Task<Producto> GetByIdAsync(int id)
+        {
+            return await _mediator.Send(new GetProducyById(id));
 
         }
     }

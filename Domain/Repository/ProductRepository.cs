@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Repository
 {
-    public class ProductRepository : GenericRepository<Product>, IProductRepository
+    public class ProductRepository : GenericRepository<Producto>, IProductRepository
     {
 
         private readonly MyDbContext _context;
