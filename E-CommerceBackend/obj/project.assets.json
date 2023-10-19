@@ -3776,19 +3776,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\javie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\E-CommerceBackend\\E-CommerceBackend.csproj",
+      "projectUniqueName": "C:\\Users\\javie\\Documents\\UNA_2023\\Segundo_Semestre\\Paradigmas de Programacion\\Proyecto E-Commerce Backend\\Basic-E-CommerceBackend\\E-CommerceBackend\\E-CommerceBackend.csproj",
       "projectName": "E-CommerceBackend",
-      "projectPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\E-CommerceBackend\\E-CommerceBackend.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\E-CommerceBackend\\obj\\",
+      "projectPath": "C:\\Users\\javie\\Documents\\UNA_2023\\Segundo_Semestre\\Paradigmas de Programacion\\Proyecto E-Commerce Backend\\Basic-E-CommerceBackend\\E-CommerceBackend\\E-CommerceBackend.csproj",
+      "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javie\\Documents\\UNA_2023\\Segundo_Semestre\\Paradigmas de Programacion\\Proyecto E-Commerce Backend\\Basic-E-CommerceBackend\\E-CommerceBackend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3796,17 +3796,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\Application\\Application.csproj"
+            "C:\\Users\\javie\\Documents\\UNA_2023\\Segundo_Semestre\\Paradigmas de Programacion\\Proyecto E-Commerce Backend\\Basic-E-CommerceBackend\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\javie\\Documents\\UNA_2023\\Segundo_Semestre\\Paradigmas de Programacion\\Proyecto E-Commerce Backend\\Basic-E-CommerceBackend\\Application\\Application.csproj"
             },
-            "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Documents\\UNA\\VI Semestre\\Paradigmas de programcion\\Basic-E-CommerceBackend\\Domain\\Domain.csproj"
+            "C:\\Users\\javie\\Documents\\UNA_2023\\Segundo_Semestre\\Paradigmas de Programacion\\Proyecto E-Commerce Backend\\Basic-E-CommerceBackend\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\javie\\Documents\\UNA_2023\\Segundo_Semestre\\Paradigmas de Programacion\\Proyecto E-Commerce Backend\\Basic-E-CommerceBackend\\Domain\\Domain.csproj"
             }
           }
         }
@@ -3865,7 +3866,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }
