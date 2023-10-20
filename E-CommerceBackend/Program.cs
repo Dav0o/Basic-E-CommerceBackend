@@ -13,7 +13,11 @@ builder.Services.AddServices(builder.Configuration);
 
 // Add HttpClientFactory
 builder.Services.AddHttpClient();
-
+builder.Services.AddCors(options => options.AddPolicy(name: "NgOrigins",
+    policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+    }));
 // Add services to the container.
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
@@ -34,7 +38,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("NgOrigins");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
