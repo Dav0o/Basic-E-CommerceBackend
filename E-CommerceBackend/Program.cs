@@ -1,7 +1,10 @@
 using Application;
 using Domain;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using System.Text.Json.Serialization;
 using static Microsoft.AspNetCore.Builder.WebApplication;
 
@@ -11,6 +14,32 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDomain(builder.Configuration);
 builder.Services.AddServices(builder.Configuration);
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+
+// Adding Jwt Bearer  
+            .AddJwtBearer(options =>
+            {
+                options.SaveToken = true;
+                options.RequireHttpsMetadata = false;
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    //    ValidateIssuer = true,
+                    //    ValidateAudience = true,
+                    //ValidAudience = builder.Configuration["JWTKey:ValidAudience"],
+                    //ValidIssuer = builder.Configuration["JWTKey:ValidIssuer"],
+
+
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWTKey:Secret"]))
+                };
+            });
 // Add HttpClientFactory
 builder.Services.AddHttpClient();
 builder.Services.AddCors(options => options.AddPolicy(name: "NgOrigins",

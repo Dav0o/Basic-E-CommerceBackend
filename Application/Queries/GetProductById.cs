@@ -11,9 +11,9 @@ namespace Application.Queries
 {
     public class GetProducyById : IRequest<Producto>
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
-        public GetProducyById(int id)
+        public GetProducyById(string id)
         {
             Id = id;
         }

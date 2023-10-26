@@ -20,12 +20,12 @@ namespace Domain.Repository
             _context = context;
         }
 
-        public async Task<CartDTO> GetCart(int id)
+        public async Task<CartDTO> GetCart(string id)
         {
             ShoppingCart cart =  _context.ShoppingCarts
                 .Include(c => c.ProductCarts)
                 .ThenInclude(pc => pc.Producto)
-                .FirstOrDefault(c => c.Id == id);
+                .FirstOrDefault(c => c.cartId == id);
 
             if(cart == null)
             {
@@ -33,15 +33,19 @@ namespace Domain.Repository
             }
             CartDTO cartDTO = new CartDTO
             {
-                Id = cart.Id,
-                CustomerId = cart.UserId,
-                Products = cart.ProductCarts.Select(pc => new ProductAddDTO
+                cartId = cart.cartId,
+                customerId = cart.customerId,
+                products = cart.ProductCarts.Select(pc => new ProductDTO
                 {
-                    ProductId = pc.ProductoId,
-                    Quantity = pc.Quantity
+                    productId = pc.ProductoId,
+                    productName = pc.ProductName,
+                    productPrice = pc.ProductPrice,
+                    productQuantity = pc.Quantity
                 }).ToList(),
-                Total = cart.Total,
-                Date = cart.ShoppingDate
+                date = cart.date,
+                total = cart.total,
+                subtotal = cart.subTotal
+                
             };
 
             return cartDTO;

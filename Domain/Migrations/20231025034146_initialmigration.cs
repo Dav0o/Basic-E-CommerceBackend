@@ -19,14 +19,14 @@ namespace Domain.Migrations
                 name: "Productos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false),
-                    Price = table.Column<int>(type: "int", nullable: false)
+                    productId = table.Column<string>(type: "varchar(255)", nullable: false),
+                    productName = table.Column<string>(type: "longtext", nullable: false),
+                    productPrice = table.Column<double>(type: "double", nullable: false),
+                    quantity = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Productos", x => x.Id);
+                    table.PrimaryKey("PK_Productos", x => x.productId);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -34,16 +34,15 @@ namespace Domain.Migrations
                 name: "ShoppingCarts",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    SubTotal = table.Column<double>(type: "double", nullable: false),
-                    Total = table.Column<double>(type: "double", nullable: false),
-                    ShoppingDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    cartId = table.Column<string>(type: "varchar(255)", nullable: false),
+                    customerId = table.Column<string>(type: "longtext", nullable: false),
+                    date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    total = table.Column<double>(type: "double", nullable: false),
+                    subTotal = table.Column<double>(type: "double", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShoppingCarts", x => x.Id);
+                    table.PrimaryKey("PK_ShoppingCarts", x => x.cartId);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -53,8 +52,10 @@ namespace Domain.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    ProductoId = table.Column<int>(type: "int", nullable: false),
-                    CartId = table.Column<int>(type: "int", nullable: false),
+                    ProductoId = table.Column<string>(type: "varchar(255)", nullable: false),
+                    CartId = table.Column<string>(type: "varchar(255)", nullable: false),
+                    ProductName = table.Column<string>(type: "longtext", nullable: false),
+                    ProductPrice = table.Column<double>(type: "double", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -64,13 +65,13 @@ namespace Domain.Migrations
                         name: "FK_ProductsCart_Productos_ProductoId",
                         column: x => x.ProductoId,
                         principalTable: "Productos",
-                        principalColumn: "Id",
+                        principalColumn: "productId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ProductsCart_ShoppingCarts_CartId",
                         column: x => x.CartId,
                         principalTable: "ShoppingCarts",
-                        principalColumn: "Id",
+                        principalColumn: "cartId",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");

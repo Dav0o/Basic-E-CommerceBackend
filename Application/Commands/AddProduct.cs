@@ -11,10 +11,11 @@ namespace Application.Commands
 {
     public class AddProduct : IRequest<Producto>
     {
-        public string Name { get; set; } = string.Empty;
+        public string productId { get; set; }
+        public string productName { get; set; }
 
-        public int Price { get; set; }
-       
+        public double productPrice { get; set; }
+
     }
 
     public class AddProductHandler : IRequestHandler<AddProduct, Producto> 
@@ -30,9 +31,10 @@ namespace Application.Commands
         public async Task<Producto> Handle(AddProduct request, CancellationToken cancellationToken)
         {
             Producto product = new Producto();
-            product.Name = request.Name;
-            product.Price = request.Price;
-         
+            product.productId = request.productId;
+            product.productName = request.productName;
+            product.productPrice = request.productPrice;
+           
 
             _productRepository.Add(product);
 

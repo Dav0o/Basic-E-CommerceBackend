@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Domain.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20231016224051_initial migration")]
+    [Migration("20231025034146_initialmigration")]
     partial class initialmigration
     {
         /// <inheritdoc />
@@ -28,11 +28,20 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CartId")
-                        .HasColumnType("int");
+                    b.Property<string>("CartId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<int>("ProductoId")
-                        .HasColumnType("int");
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<double>("ProductPrice")
+                        .HasColumnType("double");
+
+                    b.Property<string>("ProductoId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -48,41 +57,43 @@ namespace Domain.Migrations
 
             modelBuilder.Entity("Domain.Producto", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("productId")
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("productName")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Price")
+                    b.Property<double>("productPrice")
+                        .HasColumnType("double");
+
+                    b.Property<int?>("quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("productId");
 
                     b.ToTable("Productos");
                 });
 
             modelBuilder.Entity("Domain.ShoppingCart", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("cartId")
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("ShoppingDate")
+                    b.Property<string>("customerId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("date")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<double>("SubTotal")
+                    b.Property<double>("subTotal")
                         .HasColumnType("double");
 
-                    b.Property<double>("Total")
+                    b.Property<double>("total")
                         .HasColumnType("double");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
+                    b.HasKey("cartId");
 
                     b.ToTable("ShoppingCarts");
                 });

@@ -15,6 +15,6 @@ namespace Domain.Repository.IRepository
 
         //Queries
         public List<T> GetAll();
-        public T GetById(int id);
+        public T GetById(string id);
     }
 }

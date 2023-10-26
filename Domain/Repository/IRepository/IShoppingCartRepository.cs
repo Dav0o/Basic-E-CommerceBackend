@@ -9,7 +9,7 @@ namespace Domain.Repository.IRepository
 {
     public interface IShoppingCartRepository : IGenericRepository<ShoppingCart>
     {
-       public Task<CartDTO> GetCart(int id);
+       public Task<CartDTO> GetCart(string id);
 
     }
 }

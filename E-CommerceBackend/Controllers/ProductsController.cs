@@ -32,7 +32,7 @@ namespace E_CommerceBackend.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<Producto> GetByIdAsync(int id)
+        public async Task<Producto> GetByIdAsync(string id)
         {
             return await _mediator.Send(new GetProducyById(id));
 

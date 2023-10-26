@@ -29,7 +29,7 @@ namespace Domain.Repository
         }
         //Queries
 
-        public T GetById(int id)
+        public T GetById(string id)
         {
             return _DbSet.Find(id);
         }

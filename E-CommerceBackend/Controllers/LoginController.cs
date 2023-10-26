@@ -22,14 +22,14 @@ namespace E_CommerceBackend.Controllers
         public async Task<IActionResult> Post([FromBody] LoginRequest loginRequest)
         {
             // Verifica si los datos de nombre y contraseña son válidos
-            if (string.IsNullOrEmpty(loginRequest.Email) || string.IsNullOrEmpty(loginRequest.Password))
+            if (string.IsNullOrEmpty(loginRequest.Username) || string.IsNullOrEmpty(loginRequest.Password))
             {
                 return BadRequest("Nombre y contraseña son obligatorios.");
             }
 
             // Envia los datos a otra API con la ruta /auth/login
             var client = _httpClientFactory.CreateClient();
-            var requestUrl = "https://localhost:7023/api/Users/login"; 
+            var requestUrl = "https://bvg0b1xk-5001.use2.devtunnels.ms/api/Authentication/login"; 
             var response = await client.PostAsJsonAsync(requestUrl, loginRequest);
 
             if (response.IsSuccessStatusCode)
@@ -51,7 +51,7 @@ namespace E_CommerceBackend.Controllers
 
     public class LoginRequest
     {
-        public string Email { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
     }
 }
